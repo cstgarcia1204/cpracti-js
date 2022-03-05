@@ -1,2 +1,3 @@
 # cpracti-js
-cpracti-js
+## curso practico de javascript
+
