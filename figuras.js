@@ -221,7 +221,7 @@ function calcularCircunferencia(){
 
     if (VALUE_RADIO > 0) {
         var writeResult = document.getElementById("resultCirculo").innerHTML=
-        `La circunferencia del circulo es de ${CIRCUNFERENCIA.toFixed(2)} unidades`;
+        `La circunferencia del círculo es de ${CIRCUNFERENCIA.toFixed(2)} unidades`;
         return writeResult;
     } else {
         var writeOtherResult = document.getElementById("resultCirculo").innerHTML =
@@ -230,6 +230,21 @@ function calcularCircunferencia(){
     }
 }
 
+function calcularAreaCirculo(){
+    document.getElementById("resultCirculo").style.display = "block";
+    const INPUT_CIRCULO = document.getElementById("inputCirculo");
+    const VALUE_RADIO = parseFloat(INPUT_CIRCULO.value);
+    const AREA_CIRCULO = parseFloat(areaCirculo(VALUE_RADIO));
+
+    if(VALUE_RADIO > 0) {
+        var writeResult = document.getElementById("resultCirculo").innerHTML=
+        `El área del círculo es de ${AREA_CIRCULO.toFixed(2)} unidades cuadradas`;
+        return writeResult;
+    }else {
+        return document.getElementById("resultCirculo").innerHTML =
+        `Introduce números positivos para realizar los cálculos`
+    }
+}
 
 
 
