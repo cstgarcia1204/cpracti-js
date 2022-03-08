@@ -84,7 +84,7 @@ function areaTrianguloIso(lado, base) {
         console.log("altura desde areaTriangulo "+altura);
         area = (base * altura) / 2;
         return {
-            area: area,
+            area: parseFloat(area),
             altura: altura,
             base: base,
             maximoVB: valorBaseValid.maximoValorB
@@ -173,28 +173,21 @@ function cularPerimetroTrianguloIso() {
         document.getElementById("resultTIso").innerHTML= 
         `El perímetro del triangulo isósceles: ${PERIMETRO} unidades`;
         return writeResult;
-    //Mensaje en caso de que el lado o la base sean números negativos
-    } else if (VALUE_LADO <= 0 || VALUE_BASE <= 0) {
-        return document.getElementById("resultTIso").innerHTML= 
-        `Solo puedes hacer calculos con numeros positivos`
-    }else if (typeof(VALUE_LADO) == 'string' 
-    || typeof(VALUE_BASE == 'string')){
-        return document.getElementById("resultTIso").innerHTML= 
-        `Introduce valores numericos para calcular`
+    //Mensaje en caso de que el valor lado y/o el valor base no sean correctos
     }else {
     //Mensaje para notificar que la base no cumple con los requerimientos de la fórmula
         return document.getElementById("resultTIso").innerHTML= 
-        `La medida de la base que capturaste supera lo permitido.
+        `La medida de la base que capturaste no permite hacer los calculos.
+        Recuerda que solo puedes hacer calculos con numeros positivos.
         De acuerdo a los valores que ingresaste
-        el máximo valor para la base es: ${PERIMETRO.maximoValorB}.
-        `
+        el máximo valor para la base es: ${PERIMETRO.maximoValorB}`
     }
 }
 
 
 function calcularAreaTrianguloIso() {
     document.getElementById("resultTIso").style.display = "block";
-    const INPUT_L = document.getElementById("InputTrianguloIso");
+    const INPUT_L = document.getElementById("inputTrianguloIso");
     const VALUE_LADO = parseFloat(INPUT_L.value);
     const INPUT_B =document.getElementById("inputBaseTrianguloIso");
     const VALUE_BASE = parseFloat(INPUT_B.value);
@@ -208,15 +201,8 @@ function calcularAreaTrianguloIso() {
         El cálculo para la altura del triángulo es de : ${AREA.altura.toFixed(2)} unidades
         `;
         return writeResult;
-    //Mensaje en caso de que el lado o la base sean números negativos
-    } else if (VALUE_LADO <= 0 || VALUE_BASE <= 0){
-        return document.getElementById("resultTIso").innerHTML= 
-        `Solo puedes hacer calculos con numeros positivos`
-    }else if (typeof(VALUE_LADO) == 'string' 
-        || typeof(VALUE_BASE == 'string')){
-            return document.getElementById("resultTIso").innerHTML= 
-            `Introduce valores numericos para calcular`
-        }else {
+        //Mensaje para notificar que la base no cumple con los requerimientos de la fórmula
+    }else {
         return document.getElementById("resultTIso").innerHTML= 
         `La medida de la base que capturaste supera lo permitido.
         De acuerdo a los valores que ingresaste
