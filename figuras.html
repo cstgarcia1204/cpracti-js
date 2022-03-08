@@ -5,9 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figuras Geometricas | curso practico js</title>
+    <style>
+        body {
+            background: lavender;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: slategrey;
+        }
+        header {
+            text-align: center;
+        }
+        label {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #resultC, #resultTIso, #resultCirculo{
+            display: none;
+            color: palevioletred;
+            font-style: italic;
+        }
+        #figuraTrianguloIso p:nth-child(3) {
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <h1>Figuritas Geometricas</h1>
+    <header>
+        <h1>Figuritas Geometricas</h1>
+        <p>Esta es la recapitulación básica de js</p>
+    </header>
+
+    <section id="figuraCuadrado">
+        <h2>Calcula el perímetro y área de un cuadrado</h2>
+
+        <form>
+            <label for="inputCuadrado">
+                Escribe cuánto mide cada lado de tu cuadrado
+            </label>
+            <br>
+            <input id="inputCuadrado" type="number" placeholder="número positivo">
+            <br>
+            <br>
+            <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el perímetro</button>
+            <button type="button" onclick="calcularAreaCuadrado()">Calcular el área</button>
+        </form>
+
+        <p id="resultC"></p>
+    </section>
+
+    <section id="figuraTrianguloIso">
+        <h2>Calcula el área y perímetro de un triángulo isósceles</h2>
+        <p>
+            En geometría, un triángulo isósceles tiene 
+            dos lados de igual longitud y una base.
+        </p>
+        <p> 
+            Considera seguir la ley de los triángulos:
+            "La suma de los 2 lados del triangulo isósceles 
+            debe ser mayor a la base".
+        </p>
+
+        <form>
+            <label for="inputTrianguloIso">
+                Escribe cuánto miden los lados. (Un solo valor ya que lado a = lado b)
+            </label>
+            <br>
+            <input id="inputTrianguloIso" type="number" placeholder="número positivo">
+            <br>
+            <label for="inputBaseTrianguloIso">
+                Escribe cuánto mide la base del triángulo isósceles.
+            </label>
+            <br>
+            <input id="inputBaseTrianguloIso" type="number" placeholder="número positivo">
+            <br>
+            <br>
+            <button type="button" onclick="cularPerimetroTrianguloIso()">Calcular el perímetro</button>
+            <button type="button" onclick="calcularAreaTrianguloIso()">Calcular el área</button>
+        </form>
+
+        <p id="resultTIso"></p>
+    </section>
+    
+    <section id="figuraCirculo">
+        <h2>Calcula el área y perímetro de un círculo</h2>
+
+        <form>
+            <label for="inputCirculo">
+                Escribe cuánto mide el radio del círculo.
+            </label>
+            <br>
+            <input id="inputCirculo" type="number" placeholder="número positivo">
+            <br>
+            <br>
+            <button type="button" onclick="calcularCircunferencia()">Calcular el perímetro</button>
+            <!-- <button type="button" onclick="calcularAreaCirculo()">Calcular el área</button> -->
+        </form>
+
+        <p id="resultCirculo"></p>
+    </section>
 
     <script src="./figuras.js"></script>
 </body>
