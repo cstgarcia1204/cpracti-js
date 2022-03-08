@@ -21,8 +21,8 @@ function validacionValorBase(lado,base){
     La suma de los dos lados del triangulo isósceles debe ser mayor
     a la base. 
     */
-    var dobleLado = lado * 2;
-    var maximoValorBase = dobleLado -1;
+    let dobleLado = lado * 2;
+    let maximoValorBase = dobleLado -1;
 
     if (dobleLado > base) {
         return {
@@ -37,9 +37,9 @@ function validacionValorBase(lado,base){
     }
 }
 function perimetroTrianguloIso(lado, base) {
-    var valorBaseValid = validacionValorBase(lado, base);
+    let valorBaseValid = validacionValorBase(lado, base);
     if (valorBaseValid.base > 0){
-        var perimetro = (lado * 2)+ base;
+        let perimetro = (lado * 2)+ base;
         
         return parseFloat(perimetro);
     } else {
@@ -60,16 +60,16 @@ function alturaTrianguloIso(lado, base) {
     del triangulo isósceles el triángulo rectangulo
     */
 
-    var a = base/ 2;
-    var c = lado;
+    let a = base/ 2;
+    let c = lado;
     //encontrar la altura o sea el cateto b
     //fórmula para encontrar el cateto b = √c^2 -a^2
-    var cPotencia2 = c * c;
-    var aPotencia2 = a * a;
+    let cPotencia2 = c * c;
+    let aPotencia2 = a * a;
 
-    var valorBaseValid = validacionValorBase(lado, base);
+    let valorBaseValid = validacionValorBase(lado, base);
     if (valorBaseValid.base > 0){
-        var b = Math.sqrt(cPotencia2 - aPotencia2);     
+        let b = Math.sqrt(cPotencia2 - aPotencia2);     
         return b;
     } else {
         return valorBaseValid;
@@ -78,9 +78,9 @@ function alturaTrianguloIso(lado, base) {
 }
 
 function areaTrianguloIso(lado, base) {
-    var valorBaseValid = validacionValorBase(lado, base);
+    let valorBaseValid = validacionValorBase(lado, base);
     if (valorBaseValid.base > 0){
-        var altura = alturaTrianguloIso(lado, base);
+        let altura = alturaTrianguloIso(lado, base);
         console.log("altura desde areaTriangulo "+altura);
         area = (base * altura) / 2;
         return {
@@ -128,7 +128,7 @@ function calcularPerimetroCuadrado() {
     const PERIMETRO = perimetroCuadrado(VALUE);
     
     if (VALUE > 0 ) {
-        var writeResult = 
+        let writeResult = 
         document.getElementById("resultC").innerHTML= 
         `El perimetro del cuadrado es: ${PERIMETRO} unidades`;
         return writeResult;
@@ -169,7 +169,7 @@ function cularPerimetroTrianguloIso() {
 
     //Se valida que tanto el lado como la base y el perimetro sean numeros positivos
     if ( VALUE_LADO > 0 && VALUE_BASE > 0 && PERIMETRO > 0) {
-        var writeResult =
+        let writeResult =
         document.getElementById("resultTIso").innerHTML= 
         `El perímetro del triangulo isósceles: ${PERIMETRO} unidades`;
         return writeResult;
@@ -195,7 +195,7 @@ function calcularAreaTrianguloIso() {
 
     //Se valida que tanto el lado como la base y el perimetro sean numeros positivos
     if ( VALUE_LADO > 0 && VALUE_BASE >0 && AREA.base > 0) {
-        var writeResult =
+        let writeResult =
         document.getElementById("resultTIso").innerHTML= 
         `El área del triangulo isósceles: ${AREA.area.toFixed(2)} unidades cuadradas. 
         El cálculo para la altura del triángulo es de : ${AREA.altura.toFixed(2)} unidades
@@ -220,11 +220,11 @@ function calcularCircunferencia(){
     const CIRCUNFERENCIA = perimetroCirculo(VALUE_RADIO);
 
     if (VALUE_RADIO > 0) {
-        var writeResult = document.getElementById("resultCirculo").innerHTML=
+        let writeResult = document.getElementById("resultCirculo").innerHTML=
         `La circunferencia del círculo es de ${CIRCUNFERENCIA.toFixed(2)} unidades`;
         return writeResult;
     } else {
-        var writeOtherResult = document.getElementById("resultCirculo").innerHTML =
+        let writeOtherResult = document.getElementById("resultCirculo").innerHTML =
         `Introduce número positivos para realizar los cálculos`;
         return writeOtherResult;
     }
@@ -237,7 +237,7 @@ function calcularAreaCirculo(){
     const AREA_CIRCULO = parseFloat(areaCirculo(VALUE_RADIO));
 
     if(VALUE_RADIO > 0) {
-        var writeResult = document.getElementById("resultCirculo").innerHTML=
+        let writeResult = document.getElementById("resultCirculo").innerHTML=
         `El área del círculo es de ${AREA_CIRCULO.toFixed(2)} unidades cuadradas`;
         return writeResult;
     }else {
